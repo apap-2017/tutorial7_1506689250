@@ -22,7 +22,7 @@ public interface StudentMapper {
 			@Result(property = "courses", column = "npm", javaType = List.class, many = @Many(select = "selectCourses")) })
 	StudentModel selectStudent(@Param("npm") String npm);
 
-	@Select("select course.id_course, name, credits " + "from studentcourse join course "
+	@Select("select course.id_course, course.name, course.credits " + "from studentcourse join course "
 			+ "on studentcourse.id_course = course.id_course " + "where studentcourse.npm = #{npm}")
 	List<CourseModel> selectCourses(@Param("npm") String npm);
 
