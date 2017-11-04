@@ -18,4 +18,5 @@ public class Tutorial07ConsumerApplication
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
+    
 }
